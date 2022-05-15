@@ -19,6 +19,7 @@ import {
 } from "firebase/auth";
 import { auth } from "./firebase.js";
 import "./SignupLogin.css";
+import { async } from "@firebase/util";
 
 export default function Animediscovery() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -89,6 +90,22 @@ export default function Animediscovery() {
         setAnime(data.data);
       });
   };
+  // async function getAnime() {
+  //   const res = await fetch("https://api.jikan.moe/v4/random/anime");
+  //   const data = await res.json();
+  //   return data.data;
+  // }
+  // async function getAnimeWithImage() {
+  //   let anime = await getAnime();
+
+  //   while (
+  //     anime.images.jpg.image_url ===
+  //     "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
+  //   ) {
+  //     anime = await getAnime();
+  //   }
+  //   return anime;
+  // }
 
   // I love gil
   useEffect(() => {

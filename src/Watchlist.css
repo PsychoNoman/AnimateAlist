@@ -24,7 +24,7 @@
 .add-confirm-icon {
   position: absolute;
   transform: scale(1);
-  transform: translate(111px, 34px);
+  transform: translate(115px, 34px);
   cursor: pointer;
   color: black;
 }
@@ -50,5 +50,5 @@
   cursor: pointer;
   margin-left: 10px;
   background-color: white;
-  transform: translate(-570px, -4px);
+  transform: translate(-4px, -4px);
 }
