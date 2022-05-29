@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WatchList</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body style="user-select: none">
+    <header>
+      <!-- A ton of credit goes to Tyler Potts -->
+      <h1>Watch list</h1>
+      <form id="new-task-form">
+        <input
+          autocomplete="off"
+          type="text"
+          name="new-task-input"
+          id="new-task-input"
+          placeholder="What do you have planned?"
+        />
+        <input type="submit" id="new-task-submit" value="Add task" />
+      </form>
+    </header>
+    <main>
+      <section class="task-list">
+        <h2 style="color: grey">Watch list</h2>
+
+        <div id="tasks"></div>
+      </section>
+    </main>
+    <button
+      style="
+        border-style: solid;
+        bottom: 0px;
+        font-size: 21px;
+        padding: 5px;
+        transform: translate(530px, -536px);
+        position: fixed;
+        color: white;
+      "
+      data-modal-target="#modal"
+    >
+      Sign up/Log In
+    </button>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div id="sign">
+        <div class="wrapper">
+          <div class="title-text">
+            <div class="title login">Login Form</div>
+            <div class="title signup">Signup Form</div>
+          </div>
+          <div class="form-container">
+            <div class="slide-controls">
+              <input type="radio" name="slide" id="login" checked />
+              <input type="radio" name="slide" id="signup" />
+              <label for="login" class="slide login">Login</label>
+              <label for="signup" class="slide signup">Signup</label>
+              <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+              <form action="#" class="login">
+                <div class="field">
+                  <input type="email" placeholder="Email Address" required />
+                </div>
+                <div class="field">
+                  <input type="password" placeholder="Password" required />
+                </div>
+                <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+                </div>
+                <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Login" />
+                </div>
+                <div style="color: black" class="signup-link">
+                  Not a member? <a href="">Signup now</a>
+                </div>
+              </form>
+              <form action="#" class="signup">
+                <div class="field">
+                  <input type="text" placeholder="Email Address" required />
+                </div>
+                <div class="field">
+                  <input type="password" placeholder="Password" required />
+                </div>
+                <div class="field">
+                  <input type="text" placeholder="Username" required />
+                </div>
+                <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Signup" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <script>
+          const loginText = document.querySelector(".title-text .login");
+          const loginForm = document.querySelector("form.login");
+          const loginBtn = document.querySelector("label.login");
+          const signupBtn = document.querySelector("label.signup");
+          const signupLink = document.querySelector("form .signup-link a");
+          signupBtn.onclick = () => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+          };
+          loginBtn.onclick = () => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+          };
+          signupLink.onclick = () => {
+            signupBtn.click();
+            return false;
+          };
+        </script>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+    <div id="overlay"></div>
+    <div
+      style="bottom: 0px; transform: translate(-540px, -490px); position: fixed"
+      class="nav"
+    >
+      <input type="checkbox" />
+      <!-- ty (credits) CodePen Home
+      Barra de navegación con css - Menú bar (for all pages) -->
+      <span></span>
+      <span></span>
+      <div class="menu">
+        <li><a href="animediscovery.html">Discover Anime</a></li>
+      </div>
+    </div>
+    <a
+      style="
+        bottom: 0px;
+        transform: translate(540px, -20px);
+        position: fixed;
+        color: white;
+      "
+      href="animediscovery.html"
+      >Discover Anime
+    </a>
+    <script defer src="index.js"></script>
+  </body>
+</html>
