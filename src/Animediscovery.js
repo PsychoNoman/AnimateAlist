@@ -243,6 +243,9 @@ export default function Animediscovery() {
                 Copy name
               </Button> */}
               <p id="nameTitleEnglish">English Name: {anime.title_english}</p>
+              <Button onClick={navigator.clipboard.writeText(anime.title)}>
+                Copy
+              </Button>
               {/* <Button
                 colorScheme="teal"
                 className="buttons"
